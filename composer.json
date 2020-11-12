@@ -1,6 +1,6 @@
 {
-  "name": "dhii/php-project",
-  "description": "A PHP starter to ease project creation",
+  "name": "dhii/php-cage",
+  "description": "Encapsulates PHP code into a namespace",
   "minimum-stability": "dev",
   "license": "MIT",
   "authors": [
