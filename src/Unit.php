@@ -56,6 +56,20 @@ class Unit
     }
 
     /**
+     * Prints the unit's current AST as PHP code, preserving as much formatting as possible.
+     *
+     * @since [*next-version*]
+     *
+     * @param PrettyPrinterAbstract $printer The printer instance to use for printing.
+     *
+     * @return string The printed code.
+     */
+    public function print(PrettyPrinterAbstract $printer): string
+    {
+        return $printer->printFormatPreserving($this->currAst, $this->ogAst, $this->tokens);
+    }
+
+    /**
      * Creates an instance by parsing PHP code.
      *
      * @since [*next-version*]
@@ -102,19 +116,5 @@ class Unit
     public static function createFromFile(string $filepath): Unit
     {
         return static::createFromCode(file_get_contents($filepath));
-    }
-
-    /**
-     * Prints the unit's current AST as PHP code, preserving as much formatting as possible.
-     *
-     * @since [*next-version*]
-     *
-     * @param PrettyPrinterAbstract $printer The printer instance to use for printing.
-     *
-     * @return string The printed code.
-     */
-    public function print(PrettyPrinterAbstract $printer): string
-    {
-        return $printer->printFormatPreserving($this->currAst, $this->ogAst, $this->tokens);
     }
 }
