@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Dhii\PhpCage\Visitors;
 
-use Dhii\PhpCage\Context\Context;
+use Dhii\PhpCage\Context;
 use Dhii\PhpCage\Context\Symbol;
 use PhpParser\Node;
 
