@@ -57,9 +57,9 @@ class NamespaceTransform implements Transform
                     $ref->parts = $newNsFqn->parts;
                 } elseif ($ref instanceof Node\Identifier) {
                     $ref->name = $newNsFqn->toString();
+                } else {
+                    throw new RuntimeException('Invalid node type; cannot rename node');
                 }
-
-                throw new RuntimeException('Invalid node type; cannot rename node');
             }
 
             foreach ($ns->symbols as $symbol) {
