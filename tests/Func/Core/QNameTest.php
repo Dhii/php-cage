@@ -1,8 +1,8 @@
 <?php
 
-namespace Dhii\PhpCage\Test\Func;
+namespace Dhii\PhpCage\Test\Func\Core;
 
-use Dhii\PhpCage\QName;
+use Dhii\PhpCage\Core\QName;
 use PHPUnit\Framework\TestCase;
 
 class QNameTest extends TestCase
