@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Dhii\PhpCage\Core;
 
-use Dhii\PhpCage\Core\Core\Unit;
 use Dhii\PhpCage\Core\Visitors\DeclarationFinder;
 use Dhii\PhpCage\Core\Visitors\ReferenceFinder;
 use PhpParser\NodeTraverser;
