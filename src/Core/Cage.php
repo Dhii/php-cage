@@ -2,10 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Dhii\PhpCage;
+namespace Dhii\PhpCage\Core;
 
-use Dhii\PhpCage\Visitors\DeclarationFinder;
-use Dhii\PhpCage\Visitors\ReferenceFinder;
+use Dhii\PhpCage\Core\Core\Unit;
+use Dhii\PhpCage\Core\Visitors\DeclarationFinder;
+use Dhii\PhpCage\Core\Visitors\ReferenceFinder;
 use PhpParser\NodeTraverser;
 use PhpParser\NodeVisitor;
 use PhpParser\NodeVisitor\NameResolver;

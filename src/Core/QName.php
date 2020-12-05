@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Dhii\PhpCage;
+namespace Dhii\PhpCage\Core;
 
 /**
  * Represents a qualified name; a.k.a. a potentially namespaced name.

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Dhii\PhpCage\Transforms;
+namespace Dhii\PhpCage\Core\Transforms;
 
-use Dhii\PhpCage\Context;
-use Dhii\PhpCage\Transform;
+use Dhii\PhpCage\Core\Context;
+use Dhii\PhpCage\Core\Transform;
 
 /**
  * A transform implementation that applies a list of other transformations.

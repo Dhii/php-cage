@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Dhii\PhpCage\Context;
+namespace Dhii\PhpCage\Core\Context;
 
 use PhpParser\Node;
 

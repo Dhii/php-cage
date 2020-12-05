@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Dhii\PhpCage;
+namespace Dhii\PhpCage\Core;
 
-use Dhii\PhpCage\Context\Symbol;
-use Dhii\PhpCage\Context\SymbolNamespace;
+use Dhii\PhpCage\Core\Context\Symbol;
+use Dhii\PhpCage\Core\Context\SymbolNamespace;
 
 /**
  * A context holds all found, deduced or generated information about symbols in analyzed PHP code.

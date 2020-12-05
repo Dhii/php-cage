@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Dhii\PhpCage\Visitors;
+namespace Dhii\PhpCage\Core\Visitors;
 
-use Dhii\PhpCage\Context;
-use Dhii\PhpCage\Context\Symbol;
+use Dhii\PhpCage\Core\Context;
+use Dhii\PhpCage\Core\Context\Symbol;
 use PhpParser\Node;
 
 /**

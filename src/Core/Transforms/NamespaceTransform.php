@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Dhii\PhpCage\Transforms;
+namespace Dhii\PhpCage\Core\Transforms;
 
-use Dhii\PhpCage\Context;
-use Dhii\PhpCage\QName;
-use Dhii\PhpCage\Transform;
+use Dhii\PhpCage\Core\Context;
+use Dhii\PhpCage\Core\QName;
+use Dhii\PhpCage\Core\Transform;
 use PhpParser\Node;
 use RuntimeException;
 

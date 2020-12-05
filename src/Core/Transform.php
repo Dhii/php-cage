@@ -1,6 +1,6 @@
 <?php
 
-namespace Dhii\PhpCage;
+namespace Dhii\PhpCage\Core;
 
 /**
  * Represents a transformation that is applied to a context.

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Dhii\PhpCage;
+namespace Dhii\PhpCage\Core\Core;
 
 use PhpParser\Lexer;
 use PhpParser\Node;

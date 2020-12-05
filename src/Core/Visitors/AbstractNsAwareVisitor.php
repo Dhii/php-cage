@@ -1,8 +1,8 @@
 <?php
 
-namespace Dhii\PhpCage\Visitors;
+namespace Dhii\PhpCage\Core\Visitors;
 
-use Dhii\PhpCage\QName;
+use Dhii\PhpCage\Core\QName;
 use PhpParser\Node;
 use PhpParser\NodeVisitorAbstract;
 
