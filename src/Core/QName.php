@@ -151,6 +151,21 @@ class QName
     }
 
     /**
+     * Merges two instances.
+     *
+     * @since [*next-version*]
+     *
+     * @param QName $a The first instance.
+     * @param QName $b The second instance.
+     *
+     * @return QName The merged instance, comprised of the first and second instance's parts in the order: A then B.
+     */
+    public static function merge(QName $a, QName $b)
+    {
+        return new self(array_merge($a->parts, $b->parts));
+    }
+
+    /**
      * Static constructor for creating an instance from a string.
      *
      * @since [*next-version*]
