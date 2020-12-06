@@ -67,7 +67,11 @@ class ReferenceFinder extends AbstractNsAwareVisitor
                 $symbol->refs[] = $node;
             }
         } elseif ($node instanceof Node\Stmt\Namespace_) {
-            $this->ctx->getNamespace($node->name->toString())->addRef($node->name);
+            $ns = $this->ctx->getNamespace($node->name->toString());
+
+            if ($ns !== null) {
+                $ns->addRef($node->name);
+            }
         }
     }
 }

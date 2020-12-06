@@ -47,19 +47,20 @@ class Context
     }
 
     /**
-     * Retrieves a symbol namespace, create it if it doesn't already exist.
+     * Retrieves a symbol namespace.
      *
      * @since [*next-version*]
      *
      * @param string $ns The fully qualified name of the namespace.
      *
-     * @return SymbolNamespace The symbol namespace instance that corresponds to the given $ns.
+     * @return SymbolNamespace|null The symbol namespace instance that corresponds to the given $ns or null if the
+     *                              namespace does not exist.
      */
-    public function getNamespace(string $ns): SymbolNamespace
+    public function getNamespace(string $ns): ?SymbolNamespace
     {
         $key = $this->sanitizeFqNs($ns);
 
-        return $this->namespaces[$key] = $this->namespaces[$key] ?? new SymbolNamespace();
+        return $this->namespaces[$key] ?? null;
     }
 
     /**
@@ -75,7 +76,8 @@ class Context
         $name = $fqn->getName();
         $ns = $fqn->getParent()->toString();
 
-        $this->getNamespace($ns)->addSymbol($name, $symbol);
+        $this->namespaces[$ns] = $this->namespaces[$ns] ?? new SymbolNamespace();
+        $this->namespaces[$ns]->addSymbol($name, $symbol);
     }
 
     /**
@@ -92,7 +94,11 @@ class Context
         $name = $fqn->getName();
         $ns = $fqn->getParent()->toString();
 
-        return $this->getNamespace($ns)->getSymbol($name);
+        if (!array_key_exists($ns, $this->namespaces)) {
+            return null;
+        }
+
+        return $this->namespaces[$ns]->getSymbol($name);
     }
 
     /**
