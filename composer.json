@@ -15,10 +15,12 @@
       "role": "Developer"
     }
   ],
+  "prefer-stable": true,
   "require": {
     "php": "^7.4",
     "nikic/php-parser": "^4.9@dev",
-    "symfony/console": "^5.0"
+    "symfony/console": "^5.2.0",
+    "symfony/finder": "^5.2"
   },
   "require-dev": {
     "phpunit/phpunit": "^8.0 | ^9.0",
