@@ -64,6 +64,40 @@ class Context
     }
 
     /**
+     * Retrieves the contents of the context as a tree.
+     *
+     * @since [*next-version*]
+     *
+     * @return SymbolNamespace[]
+     */
+    public function getTree(): array
+    {
+        $tree = [];
+
+        foreach ($this->namespaces as $name => $symNs) {
+            $qName = QName::fromString($name);
+            $count = count($qName->parts);
+
+            $cursor = &$tree;
+            for ($i = 0; $i < $count; ++$i) {
+                $part = $qName->parts[$i];
+
+                if (!array_key_exists($part, $cursor)) {
+                    $cursor[$part] = [];
+                }
+
+                if ($i >= ($count - 1)) {
+                    $cursor[$part] = $symNs->symbols;
+                } else {
+                    $cursor = &$cursor[$part];
+                }
+            }
+        }
+
+        return $tree;
+    }
+
+    /**
      * Adds a symbol to the correct namespace.
      *
      * @since [*next-version*]
