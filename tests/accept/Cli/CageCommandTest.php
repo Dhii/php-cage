@@ -12,8 +12,9 @@ class CageCommandTest extends TestCase
     {
         {
             $stubRoot = 'stub';
-            $inputDir = "tests/$stubRoot";
-            $outputDir = 'tests/output';
+            $rootDir = __DIR__ . '/../../../';
+            $inputDir = "$rootDir/tests/$stubRoot";
+            $outputDir = "$rootDir/tests/output";
             $prefix = 'Cage';
 
             $command = sprintf('php bin/php-cage.php --output="%2$s" --prefix="%3$s" %1$s', $inputDir, $outputDir, $prefix);
@@ -21,7 +22,7 @@ class CageCommandTest extends TestCase
         }
 
         {
-            $this->cleanArtefacts($inputDir);
+            $this->cleanArtefacts($outputDir);
             passthru($command, $exitCode);
         }
 
@@ -88,6 +89,8 @@ class CageCommandTest extends TestCase
 
     protected function cleanArtefacts(string $baseDir)
     {
-        passthru(sprintf('rm -rf %1$s/**/*', $baseDir), $exitCode);
+        $command = sprintf('rm -rf %1$s/*', $baseDir);
+        var_dump($command);
+        passthru($command, $exitCode);
     }
 }
