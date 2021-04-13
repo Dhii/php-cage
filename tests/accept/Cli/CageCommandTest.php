@@ -12,7 +12,7 @@ class CageCommandTest extends TestCase
     {
         {
             $stubRoot = 'stub';
-            $rootDir = __DIR__ . '/../../../';
+            $rootDir = __DIR__ . '/../../..';
             $inputDir = "$rootDir/tests/$stubRoot";
             $outputDir = "$rootDir/tests/output";
             $prefix = 'Cage';
