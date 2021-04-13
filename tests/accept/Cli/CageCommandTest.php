@@ -12,9 +12,6 @@ class CageCommandTest extends TestCase
     {
         {
             $stubRoot = 'stub';
-            $nsRootA = 'Me\Module';
-            $nsRootB = 'Me\OtherModule';
-            $nsRootC = '';
             $inputDir = "tests/$stubRoot";
             $outputDir = 'tests/output';
             $prefix = 'Cage';
