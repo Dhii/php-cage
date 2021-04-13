@@ -57,8 +57,9 @@ class CageCommandTest extends TestCase
     {
         extract($config);
         $nsRoot = 'Me\OtherModule';
+        $nsRootA = 'Me\Module';
         $className = implode('\\', [$prefix, $nsRoot, 'ThingB']);
-        $classAName = implode('\\', [$nsRoot, 'ThingB']);
+        $classAName = implode('\\', [$nsRootA, 'ThingA']);
 
         $this->assertTrue(file_exists("$outputDir/$stubRoot/ThingB.php"));
         require_once "$outputDir/$stubRoot/ThingB.php";
@@ -70,7 +71,7 @@ class CageCommandTest extends TestCase
         $this->assertArrayHasKey(0, $args, sprintf('Constructor of "%1$s" does not have parameter 0', $className));
         $arg0 = $args[0];
 
-        $this->assertEquals($classAName, $arg0->getType()->getName());
+        $this->assertEquals(implode('\\', [$prefix, $classAName]), $arg0->getType()->getName());
     }
 
     /**
