@@ -90,7 +90,6 @@ class CageCommandTest extends TestCase
     protected function cleanArtefacts(string $baseDir)
     {
         $command = sprintf('rm -rf %1$s/*', $baseDir);
-        var_dump($command);
         passthru($command, $exitCode);
     }
 }
