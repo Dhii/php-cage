@@ -34,7 +34,8 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Dhii\\PhpCage\\Test\\": "tests"
+      "Dhii\\PhpCage\\Test\\Func\\": "tests/func",
+      "Dhii\\PhpCage\\Test\\Accept\\": "tests/accept"
     }
   },
   "extra": {
